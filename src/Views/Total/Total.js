@@ -1,7 +1,7 @@
 import "./Total.scss";
 
 function Total() {
-  return <div></div>;
+  return <div>Total</div>;
 }
 
 export default Total;
