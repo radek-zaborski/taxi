@@ -25,7 +25,7 @@ function Header() {
           </li>
         </ul>
       </nav>
-      <div class="h-full pr-8 w-2/6 h-full border-solid border-l-black border-l flex justify-end items-center justify-center">
+      <div class="h-full pr-8 w-2/6 border-solid border-l-black border-l flex justify-end items-center">
         logowanie
       </div>
     </div>
