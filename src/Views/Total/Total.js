@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext, useContext } from "react";
 import "./Total.scss";
 
 function Total() {
-  const [time, setTime] = useState("");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState({});
 
   function getTime() {
     const today = new Date();
@@ -17,17 +16,20 @@ function Total() {
 
   useEffect(() => {
     setInterval(() => {
-      setTime(getTime());
-      setDate(getDate());
+      setDate({
+        dateNumber: getDate(),
+        time: getTime(),
+      });
     }, 1000);
   });
 
+  const { dateNumber, time } = date;
   return (
     <section>
       <article>
         <span className="">{time}</span>
         <br />
-        <span className="">{date}</span>
+        <span className="">{dateNumber}</span>
       </article>
       <article>Pogoda z API</article>
 
