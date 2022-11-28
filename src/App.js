@@ -10,12 +10,12 @@ import SingleDay from "./Views/SignleDay/SingleDay";
 function App() {
   return (
     <Router>
-      <div class="w-screen flex flex-wrap m-0">
-        <header class="w-screen h-auto">
+      <div className="w-screen flex flex-wrap m-0">
+        <header className="w-screen h-auto">
           <Header />
         </header>
 
-        <section class="w-10/12 mx-auto my-24 flex justify-center">
+        <section className="w-10/12 mx-auto my-24 flex justify-center">
           <Switch>
             <Route exact path="/" component={Total}>
               <Total />
