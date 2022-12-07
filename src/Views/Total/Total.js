@@ -1,8 +1,11 @@
-import { useState, useEffect, createContext, useContext } from "react";
+import { useContext, useEffect, useMemo } from "react";
+import DataField from "../../Components/DataField/DataField";
+import Context from "../../Context/DataContext";
+
 import "./Total.scss";
 
 function Total() {
-  const [date, setDate] = useState({});
+  const [date, setDate] = useContext(Context);
 
   function getTime() {
     const today = new Date();
@@ -14,24 +17,26 @@ function Total() {
     return `${today.getDay()}-${today.getMonth()}-${today.getFullYear()}`;
   }
 
-  useEffect(() => {
-    setInterval(() => {
-      setDate({
+  setInterval(() => {
+    setDate({
+      today: {
         dateNumber: getDate(),
         time: getTime(),
-      });
-    }, 1000);
-  });
+      },
+    });
+  }, 1000);
 
-  const { dateNumber, time } = date;
+  const { today } = date;
+
+  console.log(today);
   return (
     <section>
       <article>
-        <span className="">{time}</span>
-        <br />
-        <span className="">{dateNumber}</span>
+        <h3>Data: {today ? today.dateNumber : ""}</h3>
       </article>
-      <article>Pogoda z API</article>
+      <article>
+        <DataField title="Dzisiejsza Pogoda" value={""} />
+      </article>
 
       <article>Całkowita kwota brutto</article>
       <article>Całkowity VAT</article>
