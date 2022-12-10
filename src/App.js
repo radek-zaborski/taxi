@@ -9,10 +9,11 @@ import SingleDay from "./Views/SignleDay/SingleDay";
 import Context from "./Context/DataContext";
 
 function App() {
-  const [context, setContext] = useState("");
+  const [data, setData] = useState(null);
+
   return (
     <Router>
-      <Context.Provider value={[context, setContext]}>
+      <Context.Provider value={[data, setData]}>
         <div className="w-screen flex flex-wrap m-0">
           <header className="w-screen h-auto">
             <Header />

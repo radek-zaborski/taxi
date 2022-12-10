@@ -5,35 +5,12 @@ import Context from "../../Context/DataContext";
 import "./Total.scss";
 
 function Total() {
-  const [date, setDate] = useContext(Context);
+  const [data, setData] = useContext(Context);
+  console.log("context pobierany z Total:", data);
 
-  function getTime() {
-    const today = new Date();
-    return `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
-  }
-
-  function getDate() {
-    const today = new Date();
-    return `${today.getDay()}-${today.getMonth()}-${today.getFullYear()}`;
-  }
-
-  setInterval(() => {
-    setDate({
-      today: {
-        dateNumber: getDate(),
-        time: getTime(),
-      },
-    });
-  }, 1000);
-
-  const { today } = date;
-
-  console.log(today);
   return (
     <section>
-      <article>
-        <h3>Data: {today ? today.dateNumber : ""}</h3>
-      </article>
+      <article>{/* <h3>Data: {today ? today.dateNumber : ""}</h3> */}</article>
       <article>
         <DataField title="Dzisiejsza Pogoda" value={""} />
       </article>
