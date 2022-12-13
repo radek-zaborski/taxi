@@ -9,8 +9,6 @@ function Weather() {
 
   const { weather } = data ? data : { weather: "Oczekuję na dane" };
 
-  //<ElementWeather prop={key[1]} value={weather.cisnienie} />
-
   return (
     <section className="w-full flex flex-wrap justify-center py-1 bg-slate-300 rounded-lg border-solid border border-black">
       <article>
