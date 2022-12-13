@@ -1,8 +1,6 @@
 import "./ElementWeather.css";
 
 function ElementWeather(props) {
-  console.log(props);
-
   const { id, value } = props;
   return (
     <article className="flex flex-wrap justify-center w-full">
