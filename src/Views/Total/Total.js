@@ -1,29 +1,41 @@
-import { useContext, useEffect, useMemo } from "react";
-import DataField from "../../Components/DataField/DataField";
-import Context from "../../Context/DataContext";
+import DateAndTime from "../../Components/DateAndTime/DateAndTime";
+import Weather from "../../Components/Weather/Weather";
 
 import "./Total.scss";
 
 function Total() {
-  const [data, setData] = useContext(Context);
-  console.log("context pobierany z Total:", data);
-
   return (
-    <section>
-      <article>{/* <h3>Data: {today ? today.dateNumber : ""}</h3> */}</article>
-      <article>
-        <DataField title="Dzisiejsza Pogoda" value={""} />
+    <section className=" flex flex-wrap justify-center bg-slate-400 rounded-lg border-solid border-2 border-black ">
+      <article className=" flex flex-wrap w-full justify-center my-3">
+        <DateAndTime />
+      </article>
+      <article className=" flex flex-wrap justify-center w-3/4">
+        <Weather />
       </article>
 
-      <article>Całkowita kwota brutto</article>
-      <article>Całkowity VAT</article>
-      <article>Prowizja dla B/U</article>
-      <article>koszt całej trasy</article>
-      <article>Zysk</article>
-      <article>Zarobek</article>
+      <article className=" flex flex-wrap justify-center w-3/4">
+        Całkowita kwota brutto
+      </article>
+      <article className=" flex flex-wrap justify-center w-3/4">
+        Całkowity VAT
+      </article>
+      <article className=" flex flex-wrap justify-center w-3/4">
+        Prowizja dla B/U
+      </article>
+      <article className=" flex flex-wrap justify-center w-3/4">
+        koszt całej trasy
+      </article>
+      <article className=" flex flex-wrap justify-center w-3/4">Zysk</article>
+      <article className=" flex flex-wrap justify-center w-3/4">
+        Zarobek
+      </article>
 
-      <article>Ilość wydarzeń następnego dnia z API</article>
-      <article>Notatki własne</article>
+      <article className=" flex flex-wrap justify-center w-3/4">
+        Ilość wydarzeń następnego dnia z API
+      </article>
+      <article className=" flex flex-wrap justify-center w-3/4">
+        Notatki własne
+      </article>
     </section>
   );
 }

@@ -13,13 +13,13 @@ function App() {
 
   return (
     <Router>
-      <Context.Provider value={[data, setData]}>
+      <Context.Provider value={{ data, setData }}>
         <div className="w-screen flex flex-wrap m-0">
           <header className="w-screen h-auto">
             <Header />
           </header>
 
-          <section className="w-10/12 mx-auto my-24 flex justify-center">
+          <section className="w-10/12 mx-auto my-2 flex justify-center">
             <Switch>
               <Route exact path="/" component={Total}>
                 <Total />
