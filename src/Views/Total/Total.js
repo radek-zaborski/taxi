@@ -1,47 +1,45 @@
-import { useState, useEffect, createContext, useContext } from "react";
+import DateAndTime from "../../Components/DateAndTime/DateAndTime";
+import Weather from "../../Components/Weather/Weather";
+
 import "./Total.scss";
 
 function Total() {
-  const [date, setDate] = useState({});
-
-  function getTime() {
-    const today = new Date();
-    return `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
-  }
-
-  function getDate() {
-    const today = new Date();
-    return `${today.getDay()}-${today.getMonth()}-${today.getFullYear()}`;
-  }
-
-  useEffect(() => {
-    setInterval(() => {
-      setDate({
-        dateNumber: getDate(),
-        time: getTime(),
-      });
-    }, 1000);
-  });
-
-  const { dateNumber, time } = date;
   return (
-    <section>
-      <article>
-        <span className="">{time}</span>
-        <br />
-        <span className="">{dateNumber}</span>
+    <section className=" flex flex-wrap justify-around bg-slate-400 rounded-lg border-solid border-2 border-black ">
+      <article className=" flex flex-wrap w-full justify-center my-3">
+        <DateAndTime />
       </article>
-      <article>Pogoda z API</article>
+      <section className="w-5/12 ">
+        <article className=" flex flex-wrap justify-center w-3/4">
+          <Weather />
+        </article>
+      </section>
 
-      <article>Całkowita kwota brutto</article>
-      <article>Całkowity VAT</article>
-      <article>Prowizja dla B/U</article>
-      <article>koszt całej trasy</article>
-      <article>Zysk</article>
-      <article>Zarobek</article>
+      <section className="w-5/12 flex flex-wrap items-center bg-slate-300 rounded-lg border-solid border-2 border-black">
+        <article className=" flex flex-wrap justify-center w-3/4">
+          Całkowita kwota brutto
+        </article>
+        <article className=" flex flex-wrap justify-center w-3/4">
+          Całkowity VAT
+        </article>
+        <article className=" flex flex-wrap justify-center w-3/4">
+          Prowizja dla B/U
+        </article>
+        <article className=" flex flex-wrap justify-center w-3/4">
+          koszt całej trasy
+        </article>
+        <article className=" flex flex-wrap justify-center w-3/4">Zysk</article>
+        <article className=" flex flex-wrap justify-center w-3/4">
+          Zarobek
+        </article>
+      </section>
 
-      <article>Ilość wydarzeń następnego dnia z API</article>
-      <article>Notatki własne</article>
+      <article className=" flex flex-wrap justify-center w-3/4 mt-10">
+        Ilość wydarzeń następnego dnia z API
+      </article>
+      <article className=" flex flex-wrap justify-center w-3/4 mb-5">
+        Notatki własne
+      </article>
     </section>
   );
 }
