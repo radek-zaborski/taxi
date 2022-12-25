@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Header from "./Components/Header/Header";
 
@@ -12,29 +12,23 @@ function App() {
   const [data, setData] = useState({});
 
   return (
-    <Router>
-      <Context.Provider value={{ data, setData }}>
-        <div className="w-screen flex flex-wrap m-0">
-          <header className="w-screen h-auto">
-            <Header />
-          </header>
+    <Context.Provider value={{ data, setData }}>
+      <div className="w-screen flex flex-wrap m-0">
+        <header className="w-screen h-auto">
+          <Header />
+        </header>
 
-          <section className="w-10/12 mx-auto my-2 flex justify-center">
-            <Switch>
-              <Route exact path="/" component={Total}>
-                <Total />
-              </Route>
-              <Route path="/SingleDay" component={SingleDay}>
-                <SingleDay />
-              </Route>
-              <Route path="/AllEvents" component={AllEvents}>
-                <AllEvents />
-              </Route>
-            </Switch>
-          </section>
-        </div>
-      </Context.Provider>
-    </Router>
+        <section className="w-10/12 mx-auto my-2 flex justify-center">
+          <Routes>
+            <Route exact path="/" element={<Total />} />
+
+            <Route path="/SingleDay" element={<SingleDay />} />
+
+            <Route path="/AllEvents" element={<AllEvents />} />
+          </Routes>
+        </section>
+      </div>
+    </Context.Provider>
   );
 }
 

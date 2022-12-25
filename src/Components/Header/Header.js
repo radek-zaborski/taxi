@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 function Header() {
@@ -7,21 +7,15 @@ function Header() {
       <nav className=" pl-8 w-4/6 h-full border-solid border-r-black border-r flex items-center flex-auto flex-nowrap">
         <ul className="w-full h-full flex flex-auto flex-nowrap items-center">
           <li className="h-full active:bg-slate-300 w-1/3 flex items-center justify-center">
-            <NavLink exact to="/">
-              Strona główna
-            </NavLink>
+            <Link to="/">Strona główna</Link>
           </li>
 
           <li className="h-full active:bg-slate-400 w-1/3  flex items-center justify-center">
-            <NavLink exact to="/SingleDay">
-              Dodaj dzienny raport
-            </NavLink>
+            <Link to="/SingleDay">Dodaj dzienny raport</Link>
           </li>
 
           <li className="h-full active:bg-slate-400 w-1/3  flex items-center justify-center">
-            <NavLink exact to="/AllEvents">
-              Wydarzenia
-            </NavLink>
+            <Link to="/AllEvents">Wydarzenia</Link>
           </li>
         </ul>
       </nav>
