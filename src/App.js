@@ -9,7 +9,7 @@ import SingleDay from "./Views/SignleDay/SingleDay";
 import Context from "./Context/DataContext";
 
 function App() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState({});
 
   return (
     <Router>
