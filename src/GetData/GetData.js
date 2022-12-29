@@ -11,7 +11,13 @@ export function GetDataWeather() {
     const getWeatherApi = async () => {
       try {
         const response = await axios.get(adressAPI);
-        setData({ weather: response.data });
+        setData((prevState) => {
+          return {
+            ...prevState,
+            loadingWeather: false,
+            weather: response.data,
+          };
+        });
       } catch (err) {
         console.log("blad:", err);
       }

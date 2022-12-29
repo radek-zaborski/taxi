@@ -8,14 +8,17 @@ import "./Weather.scss";
 
 function Weather() {
   const { data } = useContext(Context);
-  const { weather } = data;
+  const { weather, loadingWeather } = data;
+
   GetDataWeather();
 
-  const weatherValue = weather
-    ? Object.keys(weather).map((key) => (
-        <ElementWeather key={key} id={key} value={weather[key]} />
-      ))
-    : "oczekuje na dane";
+  let weatherValue = "Oczekiwanie na dane";
+
+  if (loadingWeather !== true) {
+    weatherValue = Object.keys(weather).map((key) => (
+      <ElementWeather key={key} id={key} value={weather[key]} />
+    ));
+  }
 
   return (
     <section className="w-full flex flex-wrap justify-center py-1 bg-slate-300 rounded-lg border-solid border border-black">

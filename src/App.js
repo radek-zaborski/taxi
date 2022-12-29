@@ -9,7 +9,7 @@ import SingleDay from "./Views/ViewAddReport/ViewAddReport";
 import Context from "./Context/DataContext";
 
 function App() {
-  const [data, setData] = useState({ weather: null });
+  const [data, setData] = useState({ loadingWeather: true }, { weather: null });
   const [wallet, setWallet] = useState(null);
 
   return (
