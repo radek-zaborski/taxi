@@ -5,14 +5,15 @@ import Header from "./Components/Header/Header";
 
 import Total from "./Views/Total/Total";
 import AllEvents from "./Views/AllEvents/AllEvents";
-import SingleDay from "./Views/SignleDay/SingleDay";
+import SingleDay from "./Views/ViewAddReport/ViewAddReport";
 import Context from "./Context/DataContext";
 
 function App() {
-  const [data, setData] = useState({});
+  const [data, setData] = useState({ weather: null });
+  const [wallet, setWallet] = useState(null);
 
   return (
-    <Context.Provider value={{ data, setData }}>
+    <Context.Provider value={{ data, setData, wallet, setWallet }}>
       <div className="w-screen flex flex-wrap m-0">
         <header className="w-screen h-auto">
           <Header />
